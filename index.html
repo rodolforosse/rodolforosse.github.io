@@ -1,0 +1,243 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>cmus - C* Music Player</title>
+  <meta name="author" content="Timo Hirvonen">
+  <meta name="description" content="cmus is a small, fast and powerful console music player for Unix-like operating systems.">
+  <meta name="keywords" content="cmus, console, curses, music, player, linux, unix, bsd, ogg, mp3, wav, flac, streaming">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="reset-min.css">
+  <link rel="stylesheet" href="fonts-min.css">
+  <link rel="stylesheet" href="modern.css">
+  <link rel="alternate" type="application/atom+xml"  href="https://github.com/cmus/cmus/commits/master.atom" title="cmus project updates">
+
+  <script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-34510696-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</head>
+
+<body>
+  <h1>cmus</h1>
+
+  <nav>
+    <ul id="navbar">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#documentation">Documentation</a></li>
+      <li><a href="#download">Download</a></li>
+      <li><a href="#development">Development</a></li>
+      <li><a href="https://github.com/cmus/cmus/wiki/">Wiki</a></li>
+    </ul>
+  </nav>
+
+  <div id="content">
+    <h2 id="home"></h2>
+    <div class="chapter">
+      <div class="tagline">cmus is a small, <em>fast</em> and powerful console music player for Unix-like operating systems.</div>
+      <a href="cmus-2.4.3-osx.png">
+        <img class="screenshot" alt="cmus screenshot" title="cmus' tree view" src="cmus-2.4.3-osx.png">
+      </a>
+      <p><a class="share-button" href="#share">Share this page</a></p>
+      <div id="share">
+        <ul>
+          <li><a href="http://www.google.com/bookmarks/mark?op=add&amp;bkmk=http%3A%2F%2Fcmus.github.io%2F&amp;title=C%2a%20Music%20Player">Google</a></li>
+          <li><a href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fcmus.github.io%2F&amp;t=C%2a%20Music%20Player">Facebook</a></li>
+          <li><a href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fcmus.github.io%2F">Twitter</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 id="features">Features</h2>
+    <div class="chapter">
+        <h3>Plugins</h3>
+        <ul>
+          <li><b>Input</b>: Ogg Vorbis, MP3, FLAC, Opus, Musepack, WavPack, WAV, AAC, MP4, audio CD,
+          and everything supported by ffmpeg (WMA, APE, MKA, TTA, SHN, ...), libmodplug and BASS</li>
+          <li><b>Output</b>: PulseAudio, ALSA, OSS, JACK, RoarAudio, CoreAudio, libao, sndio (OpenBSD), aRts, Sun, and
+          WaveOut (Windows)</li>
+        </ul>
+
+        <h3>Playing</h3>
+        <ul>
+          <li>Gapless playback</li>
+          <li>ReplayGain support</li>
+          <li>MP3 and Ogg streaming (SHOUTcast/Icecast)</li>
+          <li>Play queue</li>
+          <li>Optional playback resume on startup</li>
+        </ul>
+
+        <h3>Interface</h3>
+        <ul>
+          <li>Instant startup, even with thousands of tracks</li>
+          <li>Powerful playlist filters / live filtering</li>
+          <li>Easy to use directory browser</li>
+          <li>Customizable colors</li>
+          <li>Dynamic keybindings. You can bind a key to any command, <code>:seek +1m</code> for example</li>
+          <li>Vi / less style search mode</li>
+          <li>Vi style command mode with tab completion</li>
+        </ul>
+
+        <h3>Misc</h3>
+        <ul>
+          <li>CUE sheets support</li>
+          <li>Excellent compilations handling</li>
+          <li>Uses Unicode internally for all string handling</li>
+          <li>Supports audio scrobbling (to e.g. <a href="http://last.fm">Last.fm</a> or
+              <a href="http://libre.fm">Libre.fm</a>) etc. via
+              <a href="https://github.com/cmus/cmus/wiki/status-display-programs">
+              status display programs</a>
+          </li>
+          <li>Can run external commands for the currently selected files (tag-editor for example)</li>
+          <li>Can be controlled via UNIX socket using <code>cmus-remote</code> command</li>
+          <li>Known to work on Linux, OS X, FreeBSD, NetBSD, OpenBSD and Cygwin</li>
+        </ul>
+    </div>
+
+    <h2 id="documentation">Documentation</h2>
+    <div class="chapter">
+      <h3>Installation</h3>
+      In case your favourite package manager provides an up to date version of
+      cmus (see <a href="https://github.com/cmus/cmus/wiki/cmus-packages">list of cmus packages</a>),
+      installation is straightforward, e.g.:
+      <ul>
+        <li><b>Debian/Ubuntu Linux</b>: <code>sudo apt-get install cmus</code></li>
+        <li><b>Arch Linux</b>: <code>sudo pacman -S cmus</code></li>
+        <li><b>OS X</b>: <code>brew install cmus</code></li>
+      </ul>
+      Otherwise, please consider compiling from source — it is not hard at all.
+
+      <h3>Usage</h3>
+      cmus comes with a great reference manual. If you have it installed, try<br/>
+      <a href="https://github.com/cmus/cmus/blob/master/Doc/cmus-tutorial.txt"><code class="man">man cmus-tutorial</code></a>,
+      <a href="https://github.com/cmus/cmus/blob/master/Doc/cmus.txt"><code class="man">man cmus</code></a> and
+      <a href="https://github.com/cmus/cmus/blob/master/Doc/cmus-remote.txt"><code class="man">man cmus-remote</code></a>.
+
+      <h3>Online Documentation</h3>
+      <ul>
+        <li><a href="https://github.com/cmus/cmus/wiki/">cmus wiki</a></li>
+        <li><a href="https://github.com/cmus/cmus/wiki/reviews">Articles about cmus</a> (part of the wiki)</li>
+      </ul>
+    </div>
+
+    <h2 id="download">Download</h2>
+    <div class="chapter">
+      <h3>Stable Releases</h3>
+      <ul>
+        <li><a href="https://github.com/cmus/cmus/archive/v2.9.1.tar.gz">cmus-2.9.1.tar.gz</a>, released 22.01.2021<br/>
+    A lot of minor improvements and fixes compared to 2.8.0.
+    See <a href="https://github.com/cmus/cmus/releases/tag/v2.9.1">release notes</a> for a more complete list of changes.</li>
+
+        <li><a href="https://github.com/cmus/cmus/archive/v2.8.0.tar.gz">cmus-2.8.0.tar.gz</a>, released 29.01.2019<br/>
+    Highlights of the release are CoreAudio output plugin, D-Bus (MPRIS) support, and ability to work with multiple playlists.
+    See <a href="https://github.com/cmus/cmus/releases/tag/v2.8.0">release notes</a> for a more complete list of changes.</li>
+
+        <li><a href="https://github.com/cmus/cmus/archive/v2.7.1.tar.gz">cmus-2.7.1.tar.gz</a>, released 13.07.2015<br/>
+	  Cmus has gained support for conditionals in format strings, sndio
+	  output plugin (OpenBSD), VTX input plugin (ZX Spectrum, Atari,
+	  Amstrad CPC), and optional mouse support.
+	  More detailed list of changes can be found in the
+	  <a href="https://github.com/cmus/cmus/releases/tag/v2.7.0">release notes</a>.</li>
+
+        <li><a href="https://github.com/cmus/cmus/archive/v2.6.2.tar.gz">cmus-2.6.2.tar.gz</a>, released 29.06.2015<br/>
+	  Major new features are <a href="https://i.imgur.com/DdCUqCy.png">display of all tracks when artist is selected in tree view</a>,
+	  JACK output and Opus input plugins. Please see
+	  <a href="https://github.com/cmus/cmus/releases/tag/v2.6.0">release notes</a> for a more detailed list of changes since 2.5.x.</li>
+
+        <li><a href="https://github.com/cmus/cmus/archive/v2.5.1.tar.gz">cmus-2.5.1.tar.gz</a>, released 14.05.2014<br/>
+          Since 2.4.x., cmus has gained CUE sheets support, cdio input plugin, new
+          «zenburn» color scheme, as well as tons of minor enhancements and
+          new features — detailed release notes can be found
+	  <a href="http://article.gmane.org/gmane.comp.audio.cmus.devel/799">here</a>.</li>
+
+        <li><a href="https://sourceforge.net/projects/cmus/files/cmus-v2.4.3.tar.bz2/download">cmus-v2.4.3.tar.bz2</a>, released 30.11.2011<br/>
+	  Compared to 2.3.x series, this release features tons of
+	  improvements, with most notable ones being live library/playlist
+	  filtering and playback resume support — please see the full release
+	  notes <a href="https://sourceforge.net/mailarchive/message.php?msg_id=27403242">here</a>.</li>
+
+        <li><a href="https://sourceforge.net/projects/cmus/files/cmus-v2.3.5.tar.bz2/download">cmus-v2.3.5.tar.bz2</a>, released 10.04.2011<br/>
+	  Among other things, this release (compared to 2.2.0) features gapless MP3 playback,
+	  native PulseAudio support, faster startup, and much improved
+	  compilations handling.</li>
+
+        <li><a href="https://sourceforge.net/projects/cmus/files/cmus-v2.2.0.tar.bz2/download">cmus-v2.2.0.tar.bz2</a>, released 27.07.2007<br/>
+	  When trees were tall, and grass was green...</li>
+      </ul>
+
+      <h3>Bleeding Edge</h3>
+      <p>If you want to help cmus development and be among the first to try the latest and greatest features, use the <em>master</em> branch, e.g.:</p>
+      <pre><code class="block">git clone <a href="https://github.com/cmus/cmus">https://github.com/cmus/cmus.git</a>
+cd cmus
+./configure prefix=$HOME/cmus
+make install</code></pre>
+      <p>You may want to add the installation directory to your PATH, e.g.:</p>
+      <pre><code class="block">echo 'export PATH=$HOME/cmus/bin:$PATH' &gt;&gt; ~/.bashrc ; . ~/.bashrc</code></pre>
+
+      <p>Don't hesitate to submit an <a href="https://github.com/cmus/cmus/issues">issue</a> if you have any problems, suggestions or bug reports.</p>
+    </div>
+
+    <h2 id="development">Development</h2>
+    <div class="chapter">
+      <h3>GitHub page</h3>
+      <p>
+        <a href="https://github.com/cmus/cmus">https://github.com/cmus/cmus</a>
+      </p>
+      <h3>Issue Tracker</h3>
+      <p>Please use the GitHub <a href="https://github.com/cmus/cmus/issues">issues</a> page for any problems, suggestions, or bug reports.</p>
+
+      <h3>Mailing List</h3>
+      <p>The mailing list now serves as an archive for old releases and issues. 
+
+      <ul>
+        <li>
+          <a href="https://sourceforge.net/p/cmus/mailman/cmus-devel/" rel="nofollow">cmus-devel@lists.sourceforge.net</a> <small>(archived)</small>
+        </li>
+        <li>
+          <a href="http://dir.gmane.org/gmane.comp.audio.cmus.devel" rel="nofollow">Gmane</a> <small>(mirror)</small>
+        </li>
+      </ul>
+
+      <h3>Dependencies</h3>
+      <ul>
+        <li><a href="http://www.gnu.org/software/ncurses/ncurses.html">ncurses</a> (ncursesw recommended)</li>
+      </ul>
+
+      <h3>Optional Dependencies</h3>
+      <ul>
+        <li><a href="http://pulseaudio.org/">libpulse</a> (PulseAudio)</li>
+        <li><a href="http://www.alsa-project.org/">alsa-lib</a> (ALSA)</li>
+        <li><a href="http://www.opensound.com/oss.html">OSS</a> (OSS)</li>
+        <li><a href="http://roaraudio.keep-cool.org/">libroar</a> (RoarAudio)</li>
+        <li><a href="http://www.xiph.org/ao/">libao</a> (libao)</li>
+        <li><a href="https://web.archive.org/web/20120227030345/http://www.arts-project.org/">aRts</a> (aRts)</li>
+        <li><a href="http://www.gnu.org/software/libcdio/">libcdio</a> (cdio plugin)</li>
+        <li><a href="http://libcddb.sourceforge.net/">libcddb</a> (cdio plugin)</li>
+        <li><a href="https://xiph.org/flac/">FLAC</a> (.flac)</li>
+        <li><a href="https://www.opus-codec.org/">Opus</a> (.opus)</li>
+        <li><a href="http://www.vorbis.com/">libvorbis</a> (.ogg)</li>
+        <li><a href="http://www.musepack.net/">libmpcdec</a> (.mpc, .mpp, .mp+)</li>
+        <li><a href="http://www.wavpack.com/">wavpack</a> (.wv)</li>
+        <li><a href="http://www.underbit.com/products/mad/">libmad</a> (.mp3)</li>
+        <li><a href="http://ffmpeg.org/">libavcodec</a> (.wma, .ape, .mka, .tta, .shn, ...)</li>
+        <li><a href="https://web.archive.org/web/20161216200940/http://www.audiocoding.com/">FAAD</a> (.aac)</li>
+        <li><a href="http://mpeg4ip.sourceforge.net/">mp4v2, FAAD</a> (.mp4, .m4a, .m4b)</li>
+        <li><a href="http://modplug-xmms.sourceforge.net/">libmodplug</a> (.mod, .s3m, ...)</li>
+        <li><a href="http://mikmod.raphnet.net/">libmikmod</a> (.mod, .s3m, ...)</li>
+        <li><a href="https://www.un4seen.com/">BASS</a> (.mod, .s3m, ...)</li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+  <script src="modern.js"></script>
+</body>
+</html>
