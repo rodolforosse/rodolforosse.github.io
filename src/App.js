@@ -11,23 +11,17 @@ class App extends React.Component {
           <div>
             <nav>
               <ul id="navigation">
-                <li>
-                  <Link to="/mri/">Home</Link>
-                </li>
-                <li>
-                <Link to="/mri/About">About</Link>
-                </li>
-                <li>
-                <Link to="/mri/Contact">Contact</Link>
-                </li>
+                  <Link to="/">Home</Link>
+                  <Link to="/About">About</Link>
+                  <Link to="/Contact">Contact</Link>
               </ul>
             </nav>
           </div>
             <Switch>
-            <Route exact path="/mri/">
+            <Route exact path="/">
               <Home />
             </Route>
-            <Route path="/mri/About">
+            <Route path="/About">
               <About />
             </Route>
           </Switch>
